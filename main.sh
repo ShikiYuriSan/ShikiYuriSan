@@ -9,7 +9,7 @@ body="$(curl -s -H "sec-fetch-site: none" -H "sec-fetch-mode: navigate" -H "Acce
 body_en="$(curl -s -H "sec-fetch-site: none" -H "sec-fetch-mode: navigate" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9" -H "Accept-language: en-US,en;q=0.9" -H "User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" -H "cookie:sb=Y28FZKqetbbzFTQ2KNDPq5fA" -H "cookie:locale=en_US" "${fb_page}")"
 
 status="$(sed -E 's_\},\{_}\n{_g' <<< "${body}" | sed -nE 's_\._,_g;s_.*text":"([0-9,.]*) \\u201e[^"]*".*_Likes: \1#_p;s_.*text":"([0-9,.]*) Follower".*_Followers: \1_p')"
-ttl_frames="$(sed -nE 's_.*&#x2192\; ([0-9,]*)[^!]*_\1_p' <<< "${body_en}" | head -n 1)"
+ttl_frames="Total of $(sed -nE 's_.*&#x2192\; ([0-9,]*)[^!]*_\1_p' <<< "${body_en}" | head -n 1) frames was successfully posted!!"
 rating="Rating · $(sed -nE 's_.*"text":"Rating \\u00b7 ([^"]*)".*_\1_p' <<< "${body_en}" | head -n 1)"
 page_name="$(sed -nE 's_.*","name":"([^"]*)","profile\_picture".*_\1_p' <<< "${body_en}" | head -n 1)"
 image="$(sed -nE 's_amp;__g;s_.*name="twitter:image" content="([^"]*)".*_\1_p' <<< "${body}" | head -n 1)"
@@ -80,8 +80,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		\) \
 		-geometry +600+75 \
 		-composite \
-		-pointsize 20 -annotate +600+45 "${ttl_frames}" \
-		-pointsize 15 -fill "#333333" -annotate +630+75 "${rating}" \
+		-pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
 		\) \
@@ -91,7 +90,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 			-strokewidth 2 \
 			-draw "line 600,265 1100,265" \
 		\) \
-		-stroke none -pointsize 15 -annotate +630+105 "${fb_page##*/}" \
+		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
 		-pointsize 20 -annotate +92+200 "${page_name}" \
 		-fill "#F9BF3B" -annotate +93+199 "${page_name}" \
 		-append banner_"${inc_frame}".png &
