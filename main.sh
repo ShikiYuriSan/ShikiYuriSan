@@ -48,8 +48,8 @@ convert output.png \
 
 
 until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" -eq "${status_followers}" ]]; do
-	increment_val="$(shuf -i 300-600 -n 1)"
-	increment_val2="$(shuf -i 300-600 -n 1)"
+	increment_val="$(shuf -i 100-600 -n 1)"
+	increment_val2="$(shuf -i 100-600 -n 1)"
 	: "$((counter_like+=increment_val))"
 	: "$((counter_followers+=increment_val2))"
 	: "$((inc_frame+=1))"
@@ -91,8 +91,8 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 			-draw "line 600,265 1100,265" \
 		\) \
 		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
-		-pointsize 20 -annotate +125+295 "${page_name}" \
-		-fill "#ffffff" -annotate +126+194 "${page_name}" \
+		-pointsize 20 -annotate +115+295 "${page_name}" \
+		-fill "#ffffff" -annotate +116+194 "${page_name}" \
 		-append banner_"${inc_frame}".png &
 done
 wait
