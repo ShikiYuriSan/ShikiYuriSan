@@ -74,23 +74,23 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		-composite \
 		-gravity west \
 		-fill "#ffffff" -font oswald.ttf -pointsize 68 -interline-spacing "-20" -annotate +600-63 "${status_composer}" -interline-spacing 0  \
-		# \( assets/star.png \
-		# 	-fill "#333333" \
-		# 	-colorize 100 \
-		# \) \
-		# -geometry +600+75 \
-		# -composite \
-		# -pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
+		\( assets/star.png \
+			-fill "#ffffff" \
+			-colorize 100 \
+		\) \
+		-geometry +600+75 \
+		-composite \
+		-pointsize 20 -fill "#ffffff" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
 		\) \
-		-geometry +600+45 \
+		-geometry +600+105 \
 		-composite \
 		\( -stroke "#ffffff" \
 			-strokewidth 2 \
 			-draw "line 600,265 1100,265" \
 		\) \
-		-stroke none -pointsize 20 -annotate +630+45 "${fb_page##*/}" \
+		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
 		-pointsize 20 -annotate +119+295 "${page_name}" \
 		-fill "#ffffff" -annotate +120+194 "${page_name}" \
 		-append banner_"${inc_frame}".png &
