@@ -92,7 +92,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		\) \
 		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
 		-pointsize 20 -annotate +92+200 "${page_name}" \
-		-fill "#F9BF3B" -annotate +93+199 "${page_name}" \
+		-fill "#ffffff" -annotate +93+199 "${page_name}" \
 		-append banner_"${inc_frame}".png &
 done
 wait
