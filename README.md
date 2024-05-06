@@ -13,6 +13,7 @@
 
 
 ![Hello](./banner.gif)
-![Hi](https://raw.githubusercontent.com/ShikiYuriSan/LycorisStatus/6ea5b6205e1f60cad53563c9d0dca76275b15087/banner.gif)
+![amEmuotori](https://raw.githubusercontent.com/ShikiYuriSan/LycorisStatus/main/banner.gif)
+![emuisMeaningSMILE](https://raw.githubusercontent.com/ShikiYuriSan/OshiStatus/main/banner.gif)
 
 <img src="https://komarev.com/ghpvc/?username=ShikiYuriSan" alt="Image" height="0" width="0">
