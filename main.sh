@@ -65,11 +65,12 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 	EOF
 	)"
 	convert -size 1280x480 xc:"#ffffff" \
-		\( outshadow.png \
-			-bordercolor "#000000" \
-			-border 75 \
-			-resize 500x500 \
-		\) \
+        \( outshadow.png \
+            -bordercolor "rgba(0,0,0,0)" \
+            -border 75 \
+            -resize 500x500 \
+        \) \
+
 		-geometry +0-20 \
 		-composite \
 		-gravity west \
