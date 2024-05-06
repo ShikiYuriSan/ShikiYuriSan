@@ -31,8 +31,8 @@ circlelize_image(){
 
 # create facebook logo
 convert -size 512x512 xc:none \
-	-fill "#333333" -draw "circle $((512/2)) $((512/2)) $((512/2)) 1" \
-	-fill "#ffffff" \
+	-fill "#ffffff" -draw "circle $((512/2)) $((512/2)) $((512/2)) 1" \
+	-fill "#000000" \
 	-draw "path 'M356,330l11-74h-71v-48q1-40,42-40h32v-63q-34-5-57-5c-60,0-97,36-97,100v56H151v74h65v182h80V330z'" "fblogo.png"
 
 # create banner
@@ -64,7 +64,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 	Followers: $(sed -E ':L;s=\b([0-9]+)([0-9]{3})\b=\1,\2=g;t L' <<< "${counter_followers}")
 	EOF
 	)"
-	convert -size 1280x480 xc:"#ffffff" \
+	convert -size 1280x480 xc:"#000000" \
 		\( outshadow.png \
 			-bordercolor "#000000" \
 			-border 75 \
@@ -73,24 +73,24 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		-geometry +0-20 \
 		-composite \
 		-gravity west \
-		-fill "#333333" -font oswald.ttf -pointsize 68 -interline-spacing "-20" -annotate +600-63 "${status_composer}" -interline-spacing 0  \
-		\( assets/star.png \
-			-fill "#333333" \
-			-colorize 100 \
-		\) \
-		-geometry +600+75 \
-		-composite \
-		-pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
+		-fill "#ffffff" -font oswald.ttf -pointsize 68 -interline-spacing "-20" -annotate +600-63 "${status_composer}" -interline-spacing 0  \
+		# \( assets/star.png \
+		# 	-fill "#333333" \
+		# 	-colorize 100 \
+		# \) \
+		# -geometry +600+75 \
+		# -composite \
+		# -pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
 		\) \
-		-geometry +600+105 \
+		-geometry +600+45 \
 		-composite \
-		\( -stroke "#333333" \
+		\( -stroke "#ffffff" \
 			-strokewidth 2 \
 			-draw "line 600,265 1100,265" \
 		\) \
-		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
+		-stroke none -pointsize 20 -annotate +630+45 "${fb_page##*/}" \
 		-pointsize 20 -annotate +119+295 "${page_name}" \
 		-fill "#ffffff" -annotate +120+194 "${page_name}" \
 		-append banner_"${inc_frame}".png &
