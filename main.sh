@@ -64,9 +64,9 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 	Followers: $(sed -E ':L;s=\b([0-9]+)([0-9]{3})\b=\1,\2=g;t L' <<< "${counter_followers}")
 	EOF
 	)"
-	convert -size 1280x480 xc:"#F9BF3B" \
+	convert -size 1280x480 xc:"#ffffff" \
 		\( outshadow.png \
-			-bordercolor "#2980B9" \
+			-bordercolor "#000000" \
 			-border 75 \
 			-resize 500x500 \
 		\) \
@@ -80,7 +80,8 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		\) \
 		-geometry +600+75 \
 		-composite \
-		-pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
+		-pointsize 20 -annotate +600+45 "${ttl_frames}" \
+		-pointsize 15 -fill "#333333" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
 		\) \
@@ -90,7 +91,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 			-strokewidth 2 \
 			-draw "line 600,265 1100,265" \
 		\) \
-		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
+		-stroke none -pointsize 15 -annotate +630+105 "${fb_page##*/}" \
 		-pointsize 20 -annotate +92+200 "${page_name}" \
 		-fill "#F9BF3B" -annotate +93+199 "${page_name}" \
 		-append banner_"${inc_frame}".png &
