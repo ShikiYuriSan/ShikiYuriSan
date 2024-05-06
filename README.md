@@ -7,7 +7,7 @@
 
 </div>
 
-## KonoFrame Page Test
+## Every KonoSuba Frame in Order Page
 
 <div align="center">
 
