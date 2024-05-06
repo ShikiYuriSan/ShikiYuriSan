@@ -32,7 +32,7 @@ circlelize_image(){
 # create facebook logo
 convert -size 512x512 xc:none \
 	-fill "#333333" -draw "circle $((512/2)) $((512/2)) $((512/2)) 1" \
-	-fill "#ffffff" \
+	-fill "#F9BF3B" \
 	-draw "path 'M356,330l11-74h-71v-48q1-40,42-40h32v-63q-34-5-57-5c-60,0-97,36-97,100v56H151v74h65v182h80V330z'" "fblogo.png"
 
 # create banner
@@ -80,8 +80,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		\) \
 		-geometry +600+75 \
 		-composite \
-		-pointsize 20 -annotate +600+45 "${ttl_frames}" \
-		-pointsize 15 -fill "#333333" -annotate +630+75 "${rating}" \
+		-pointsize 20 -fill "#333333" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
 		\) \
@@ -91,7 +90,7 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 			-strokewidth 2 \
 			-draw "line 600,265 1100,265" \
 		\) \
-		-stroke none -pointsize 15 -annotate +630+105 "${fb_page##*/}" \
+		-stroke none -pointsize 20 -annotate +630+105 "${fb_page##*/}" \
 		-pointsize 20 -annotate +92+200 "${page_name}" \
 		-fill "#F9BF3B" -annotate +93+199 "${page_name}" \
 		-append banner_"${inc_frame}".png &
