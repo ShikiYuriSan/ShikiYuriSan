@@ -32,7 +32,7 @@ circlelize_image(){
 # create facebook logo
 convert -size 512x512 xc:none \
 	-fill "#333333" -draw "circle $((512/2)) $((512/2)) $((512/2)) 1" \
-	-fill "#F9BF3B" \
+	-fill "#ffffff" \
 	-draw "path 'M356,330l11-74h-71v-48q1-40,42-40h32v-63q-34-5-57-5c-60,0-97,36-97,100v56H151v74h65v182h80V330z'" "fblogo.png"
 
 # create banner
