@@ -80,7 +80,6 @@ until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" 
 		\) \
 		-geometry +600+75 \
 		-composite \
-		-pointsize 20 -annotate +600+45 "${ttl_frames}" \
 		-pointsize 15 -fill "#333333" -annotate +630+75 "${rating}" \
 		\( fblogo.png \
 			-resize 20x20 \
