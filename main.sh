@@ -48,8 +48,8 @@ convert output.png \
 
 
 until [[ "${counter_like}" -eq "${status_like}" ]] && [[ "${counter_followers}" -eq "${status_followers}" ]]; do
-	increment_val="$(shuf -i 100-600 -n 1)"
-	increment_val2="$(shuf -i 100-600 -n 1)"
+	increment_val="$(shuf -i 100-300 -n 1)"
+	increment_val2="$(shuf -i 100-300 -n 1)"
 	: "$((counter_like+=increment_val))"
 	: "$((counter_followers+=increment_val2))"
 	: "$((inc_frame+=1))"
