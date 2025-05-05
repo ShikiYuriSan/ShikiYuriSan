@@ -1,4 +1,5 @@
 # Hallo :)
+Working on Personal ai assistant
 <div align="center">
 
 ![Discord Presence](https://lanyard.cnrad.dev/api/414734946024816643?showDisplayName=true&borderRadius=30px&idleMessage=Probably%20doing%20something%20else...)
