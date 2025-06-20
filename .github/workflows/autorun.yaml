@@ -2,7 +2,7 @@ name: "The One"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */5 * * *"
+    - cron: "0 */4 * * *"
 
 concurrency:
   group: ${{ github.ref }}
@@ -10,10 +10,10 @@ concurrency:
 
 jobs:
   execute:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ github.triggering_actor == github.repository_owner }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "rerun on fail"
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOK }}
