@@ -1,6 +1,6 @@
 #!/bin/bash
 
-fb_page="https://www.facebook.com/Konoframe"
+fb_page="https://www.facebook.com/Konoframe2"
 counter_like=0
 counter_followers=0
 inc_frame=0
